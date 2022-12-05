@@ -2,7 +2,7 @@
 
 Jogo da Velha feito com react, typescript, Tailwind CSS e VITE
 
-[Demostração ao vivo](https://medeiroz-tic-tac-toe.netlify.app)
+[Live Demo](https://medeiroz-tic-tac-toe.netlify.app)
 
 
 
