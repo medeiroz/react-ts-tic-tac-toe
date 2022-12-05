@@ -1,6 +1,9 @@
 import { Box } from "./Box"
 
 const TableBoard = () => {
+
+  const boxes = Array(9).fill(null);
+
   return (
     <div className="
       grid
@@ -14,16 +17,11 @@ const TableBoard = () => {
       [&>.box:not(:nth-child(3n))]:border-r-4
       [&>.box:not(:nth-last-child(-n+3))]:border-b-4
     ">
-      <Box value="X" />
-      <Box value="O" />
-      <Box value="X" />
-      <Box value="O" />
-      <Box value="X" />
-      <Box value="X" />
-      <Box value="X" />
-      <Box value="O" />
-      <Box value="O" />
-
+      {
+        boxes.map((value, index) => {
+          return <Box value={value} id={index} />
+        })
+      }
     </div>
   )
 }

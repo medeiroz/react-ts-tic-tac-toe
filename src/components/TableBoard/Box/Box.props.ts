@@ -1,3 +1,4 @@
 export interface BoxProps {
-  value?: 'X' | 'O' | null | undefined
+  id: number,
+  value?: 'X' | 'O' | '' | null | undefined
 }

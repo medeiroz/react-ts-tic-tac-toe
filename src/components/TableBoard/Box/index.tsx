@@ -1,6 +1,15 @@
 import { BoxProps } from "./Box.props"
 
 const Box = (props: BoxProps) => {
+
+  let textClass = '';
+  
+  if (props.value === 'X') {
+    textClass = 'text-green-500'
+  } else if (props.value === 'O') {
+    textClass = 'text-red-500'
+  }
+
   return (
     <div className={`
         box
@@ -10,7 +19,9 @@ const Box = (props: BoxProps) => {
         text-6xl
         border-gray-200
         font-bold
-        ${props.value === 'X' ? 'text-green-500' : 'text-red-500'}
+        ${textClass}
+        ${props.value ? 'cursor-not-allowed' : 'cursor-pointer'}
+
     `}>
       { props.value }
     </div>
