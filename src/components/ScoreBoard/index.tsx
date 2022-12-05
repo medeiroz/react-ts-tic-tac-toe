@@ -1,4 +1,4 @@
-import { Player } from "../Player.tsx"
+import { Player } from "../Player"
 
 const ScoreBoard = () => {
   return (
