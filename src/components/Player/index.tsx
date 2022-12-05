@@ -3,7 +3,7 @@ import { PlayerProps } from './Player.props'
 
 const Player = (props: PlayerProps) => {
 
-  const playerTurn = 'X';
+  const playerTurn = ['X', 'O'].find(player => player === 'X');
 
   let borderClass = 'border-gray-400';
 
