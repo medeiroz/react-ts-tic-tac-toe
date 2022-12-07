@@ -7,6 +7,7 @@ export interface GameState {
   boxes: Array<PlayerModel | null>,
   player: PlayerModel,
   winner: PlayerModel | null,
+  draw: boolean,
 }
 
 export interface PlayPayloadAction {
@@ -18,6 +19,7 @@ const initialState: GameState = {
   boxes: Array(9).fill(null),
   player: 'X',
   winner: null,
+  draw: false,
 }
 
 
@@ -36,8 +38,9 @@ export const gameSlice = createSlice({
       
       state.boxes[action.payload.index] = action.payload.player
       state.winner = gameService.getWinner(state.boxes)
+      state.draw = gameService.isDraw(state.boxes)
 
-      if (state.winner === null) {
+      if (state.winner === null && state.draw === false) {
         state.player = state.player !== 'X' ? 'X' : 'O'
       }
     },

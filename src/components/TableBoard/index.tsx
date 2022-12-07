@@ -9,6 +9,7 @@ const TableBoard = () => {
   const boxes = useAppSelector(state => state.game.boxes)
   const player = useAppSelector(state => state.game.player)
   const winner = useAppSelector(state => state.game.winner)
+  const draw = useAppSelector(state => state.game.draw)
   const dispatch = useDispatch()
 
   const handleBoxClick = (index: number) => {
@@ -18,9 +19,20 @@ const TableBoard = () => {
   useEffect(() => {
     if (winner) {
       dispatch(incrementWin(winner))
+      setTimeout(() => {
+        window.alert(`Player ${winner} wins`);
+      }, 100)
     }
   }
   ,[winner])
+
+  useEffect(() => {
+    if (draw) {
+      setTimeout(() => {
+        window.alert(`Draw game`);
+      }, 100);
+    }
+  }, [draw]);
 
   return (
     <div className="
