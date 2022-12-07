@@ -1,4 +1,5 @@
+import { PlayerModel } from './../../models/Player.model';
 export interface PlayerProps {
-  type: 'X' | 'O',
+  type: PlayerModel,
   score: number,
 }

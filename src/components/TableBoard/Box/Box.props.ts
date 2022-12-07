@@ -1,4 +1,6 @@
+import { PlayerModel } from './../../../models/Player.model';
 export interface BoxProps {
-  id: number,
-  value?: 'X' | 'O' | '' | null | undefined
+  key: number,
+  value: PlayerModel | null,
+  onClick: () => void,
 }

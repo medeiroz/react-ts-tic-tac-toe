@@ -1,6 +1,6 @@
 # tic-tac-toe
 
-Jogo da Velha feito com react, typescript, Tailwind CSS e VITE
+Tic Tae Toe make with Vite + React + TS + Redux Toolkit + Tailwind CSS
 
 [Live Demo](https://medeiroz-tic-tac-toe.netlify.app)
 

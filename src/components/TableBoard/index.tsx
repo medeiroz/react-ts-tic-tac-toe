@@ -1,8 +1,26 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { play } from "../../features/game/game.slice";
+import { incrementWin } from "../../features/score/score.slice";
+import { useAppSelector } from "../../hooks";
 import { Box } from "./Box"
 
 const TableBoard = () => {
+  const boxes = useAppSelector(state => state.game.boxes)
+  const player = useAppSelector(state => state.game.player)
+  const winner = useAppSelector(state => state.game.winner)
+  const dispatch = useDispatch()
 
-  const boxes = Array(9).fill(null);
+  const handleBoxClick = (index: number) => {
+    dispatch(play({ index, player }))
+  }
+
+  useEffect(() => {
+    if (winner) {
+      dispatch(incrementWin(winner))
+    }
+  }
+  ,[winner])
 
   return (
     <div className="
@@ -19,7 +37,7 @@ const TableBoard = () => {
     ">
       {
         boxes.map((value, index) => {
-          return <Box value={value} id={index} />
+          return <Box value={value} key={index} onClick={() => handleBoxClick(index)} />
         })
       }
     </div>

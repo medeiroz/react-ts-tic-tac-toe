@@ -1,9 +1,9 @@
+import { useAppSelector } from '../../hooks';
 import { PlayerProps } from './Player.props'
 
 
 const Player = (props: PlayerProps) => {
-
-  const playerTurn = ['X', 'O'].find(player => player === 'X');
+  const playerTurn = useAppSelector(state => state.game.player)
 
   let borderClass = 'border-gray-400';
 

@@ -1,0 +1,1 @@
+export type PlayerModel = 'X' | 'O'

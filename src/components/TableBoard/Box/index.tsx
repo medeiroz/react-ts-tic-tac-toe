@@ -11,7 +11,9 @@ const Box = (props: BoxProps) => {
   }
 
   return (
-    <div className={`
+    <div
+      onClick={props.onClick}
+      className={`
         box
         flex
         justify-center
@@ -21,8 +23,8 @@ const Box = (props: BoxProps) => {
         font-bold
         ${textClass}
         ${props.value ? 'cursor-not-allowed' : 'cursor-pointer'}
-
-    `}>
+      `}
+    >
       { props.value }
     </div>
   )
