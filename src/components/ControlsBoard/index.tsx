@@ -14,13 +14,13 @@ const ControlsBoard = () => {
 
   const playerTurnLabel = (
     <span className="bg-white px-4 py-2 rounded">
-      Turn {player}
+      Turn <span className="text-xl font-bold">{player}</span>
     </span>
   )
 
   const winnerLabel = (
     <span className="bg-white px-4 py-2 rounded">
-      <span className="text-xl font-bold line-">{winner}</span> is Winner
+      <span className="text-xl font-bold">{winner}</span> is Winner
     </span>
   );
 
