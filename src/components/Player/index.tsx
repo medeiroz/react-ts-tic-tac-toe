@@ -15,7 +15,7 @@ const Player = (props: PlayerProps) => {
 
   return (
     <div className={`flex flex-col items-center justify-between rounded border ${borderClass}`}>
-      <span className="w-full text-center my-2 mx-8">
+      <span className="w-full text-center my-2 mx-4 md:mx-6">
         Jogador
         <span className={`ml-2 font-bold ${props.type === 'X' ? 'text-green-500' : 'text-red-500'}`}>
           { props.type }

@@ -18,9 +18,13 @@ const Box = (props: BoxProps) => {
         flex
         justify-center
         items-center
-        text-6xl
+        text-8xl
         border-gray-200
         font-bold
+        aspect-square
+        max-h-40
+        hover:bg-gray-100
+        ${props.value ? 'animate-growth': ''} 
         ${textClass}
         ${props.value ? 'cursor-not-allowed' : 'cursor-pointer'}
       `}
